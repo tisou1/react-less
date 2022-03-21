@@ -1,5 +1,17 @@
 
+export default () => {
 
-export default () => (
-  <div className="text-emerald-400 text-2xl">根路径......</div>
-)
+  const [count, setCount] = useState<number>(0)
+  const ref = useRef<any>(null)
+  useEffect(() => {
+    console.log(ref.curent);
+  })
+  return(
+    <div 
+    className="text-emerald-400 text-tisou1-pri text-2xl" 
+    onClick={() => setCount(count => count + 1)}
+    >
+      根路径...... {count}
+    </div>
+  )
+}
