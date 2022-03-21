@@ -16,7 +16,8 @@ export default defineConfig({
       ],
 
       imports: [
-        'react'
+        'react',
+        'react-router-dom'
         // { 预设里面已经包括了useState useEffect....
         //https://github.com/antfu/unplugin-auto-import/blob/main/src/presets/react.ts
         //   'react' :[
@@ -25,7 +26,8 @@ export default defineConfig({
         //     ['useRef', 'useMyRef'], //使用别名
         //   ]
         // }
-      ]
+      ],
+      dts: './src/auto-imports.d.ts', //ts类型声明
     }), //auto import
   ]
 })

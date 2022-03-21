@@ -4,7 +4,7 @@ export default () => {
   const [count, setCount] = useState<number>(0)
   const ref = useRef<any>(null)
   useEffect(() => {
-    console.log(ref.curent);
+    console.log(ref.current);
   })
   return(
     <div 
