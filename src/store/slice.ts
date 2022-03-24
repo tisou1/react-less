@@ -17,5 +17,5 @@ export const counterSlice = createSlice({
 
 //生成action的方法
 export const { incremented, decremented } = counterSlice.actions
-//对饮action的reducer
+//对应action的reducer
 export default counterSlice.reducer

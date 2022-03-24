@@ -3,11 +3,12 @@ import react from '@vitejs/plugin-react'
 import Pages from 'vite-plugin-pages'
 import WindiCSS from 'vite-plugin-windicss'
 import AutoImport from 'unplugin-auto-import/vite'
+import * as path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve:{
     alias:{
-      '@':`src/`
+      '@':path.resolve(__dirname,'src')
     }
   },
   plugins: [

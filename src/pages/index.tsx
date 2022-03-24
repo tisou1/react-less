@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux'
-import { decremented, incremented } from '../store/slice'
+import { decremented, incremented } from '@/store/slice'
 import { RootState } from '../store'
 
 export default () => {
