@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./",
     "target": "ESNext",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
@@ -21,7 +21,7 @@
       "vite-plugin-pages/client",
     ],
     "paths": {
-      "@/*":["src/*"]
+      "~/*":["src/*"]
     }
   },
   "include": ["src"],
