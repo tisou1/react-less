@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { decremented, incremented } from '~/store/reducers/counterSlice'
 import { change } from '~/store/reducers/booleanSlice'
-import { RootState } from '../store'
+import  { RootState } from '../store'
 
 export default () => {
   const { counter, booleaner} = useSelector((state: RootState) => state)
@@ -12,10 +12,6 @@ export default () => {
   useEffect(() => {
     console.log(ref.current);
   })
-  // store.subscribe(() => {
-  //   console.log(store.getState());
-  // })
-  // const {value} = store.getState()
   return(
     <div 
     className="text-emerald-400 text-tisou1-pri text-2xl" 
