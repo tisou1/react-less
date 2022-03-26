@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { decremented, incremented } from '~/store/reducers/counterSlice'
 import { change } from '~/store/reducers/booleanSlice'
-import { RootState } from '../store'
+import  { RootState } from '../store'
 
 export default () => {
   const { counter, booleaner } = useSelector((state: RootState) => state)
@@ -22,6 +22,9 @@ export default () => {
   return (
     <div
       className="container mx-auto"
+  return(
+    <div 
+    className="text-emerald-400 text-tisou1-pri text-2xl" 
     >
 
       <div className='p-4 bg-blue-300 dark:(bg-black) opacity-80 text-3xl text-center relative'>
