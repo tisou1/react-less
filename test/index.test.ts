@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import store from '../src/store'
-import { decremented, incremented  } from '../src/store/reducers/counterSlice'
+import { decremented, incremented } from '../src/store/reducers/counterSlice'
 
 describe('boolean', () => {
   it('1', () => {
