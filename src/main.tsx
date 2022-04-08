@@ -7,7 +7,7 @@ import routes from '~react-pages'
 import 'virtual:windi.css'
 import store from './store'
 import { Provider } from 'react-redux'
-
+import Header from '~/layout/header'
 const App = () => {
   return (
     <Suspense fallback={<p>...</p>}>
@@ -19,6 +19,7 @@ const App = () => {
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+      <Header/>
       <Router>
         <App />
       </Router>
