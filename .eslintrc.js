@@ -1,9 +1,9 @@
 module.exports = {
-  /* ... */
-  extends: [
-    // ...
-    './.eslintrc-auto-import.json',
-    "eslint:recommended",
-    "plugin:react/recommended"
-  ],
+  /* ... @antfu和下面这个放一起有点问题 */
+  // extends: [
+  //   "@antfu",
+  //   // ...
+  //   './.eslintrc-auto-import.json',
+  // ],
+  extends: '@antfu',
 }
