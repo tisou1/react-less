@@ -1,4 +1,6 @@
+import { t } from 'i18next'
 import React from 'react'
+import i18n from '../i18next'
 import { __changeTheme } from '~/composables'
 const darkIcon = (
   <svg
@@ -16,7 +18,7 @@ const darkIcon = (
       <polygon points="444 228 468 228 468 204 444 204" />
     </g>
   </svg>
-);
+)
 
 const lightIcon = (
   <svg
@@ -39,18 +41,28 @@ const lightIcon = (
       <polygon points="444 228 468 228 468 204 444 204" />
     </g>
   </svg>
-);
+)
 
-//bg-[#121212] == dark:bg-hex-121212
+// bg-[#121212] == dark:bg-hex-121212
 export default function Header() {
+  const { t } = useTranslation()
+  const changeLanguage = () => {
+    const language = localStorage.getItem('i18nextLng')
+    if (language === 'en')
+      i18n.changeLanguage('zh-CN')
+
+    else if (language === 'zh-CN')
+      i18n.changeLanguage('en')
+  }
   return (
-    <div className='w-full flex justify-end items-center z-[100] fixed h-16 sm:h-10 sm:py-0 sm:px-6 text-center text-gray-700 dark:text-gray-200 '>
-      <div className='them flex items-center'>
-        <div className='cursor-pointer block dark:hidden' onClick={_ => __changeTheme('dark')}>
+    <div className="w-full flex justify-end items-center z-[100] fixed h-16 sm:h-10 sm:py-0 sm:px-6 text-center text-gray-700 dark:text-gray-200 ">
+      <div onClick={changeLanguage} className="mr-3">{t('change')}</div>
+      <div className="them flex items-center">
+        <div className="cursor-pointer block dark:hidden" onClick={_ => __changeTheme('dark')}>
           {darkIcon}
         </div>
-        <div className='cursor-pointer hidden dark:block'  onClick={_ => __changeTheme('light')}>
-        {lightIcon}
+        <div className="cursor-pointer hidden dark:block" onClick={_ => __changeTheme('light')}>
+          {lightIcon}
         </div>
       </div>
     </div>

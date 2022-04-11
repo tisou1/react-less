@@ -26,5 +26,6 @@ declare global {
   const useRoutes: typeof import('react-router-dom')['useRoutes']
   const useSearchParams: typeof import('react-router-dom')['useSearchParams']
   const useState: typeof import('react')['useState']
+  const useTranslation: typeof import('react-i18next')['useTranslation']
 }
 export {}
