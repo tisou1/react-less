@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux'
+import { Outlet } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import type { RootState } from '../store'
 import { decremented, incremented } from '~/store/reducers/counterSlice'
