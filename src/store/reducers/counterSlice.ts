@@ -1,21 +1,21 @@
-import { createSlice, configureStore } from '@reduxjs/toolkit'
+import { configureStore, createSlice } from '@reduxjs/toolkit'
 
 export const counterSlice = createSlice({
-  name:'counter',
+  name: 'counter',
   initialState: {
     value: 0,
   },
   reducers: {
-    incremented: state => {
+    incremented: (state) => {
       state.value += 1
     },
-    decremented: state => {
+    decremented: (state) => {
       state.value -= 1
-    }
-  }
+    },
+  },
 })
 
-//生成action的方法
+// 生成action的方法
 export const { incremented, decremented } = counterSlice.actions
-//对应action的reducer
+// 对应action的reducer
 export default counterSlice.reducer

@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux'
-import { Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
-import type { RootState } from '../store'
+import type { RootState } from '~/store'
 import { decremented, incremented } from '~/store/reducers/counterSlice'
 
 const Index = () => {
@@ -18,6 +18,8 @@ const Index = () => {
         <div onClick={() => dispatch(incremented())} className="text-2xl text-blue-500/50 w-24px h-24px leading-24px cursor-pointer bg-gray-200  dark:bg--gray-700  rounded-4px mr-8px text-center">+</div>
         <div onClick={() => dispatch(decremented())} className="text-2xl text-blue-500 w-24px h-24px leading-24px cursor-pointer bg-gray-200  dark:bg--gray-70 rounded-4px text-center">-</div>
       </div>
+
+      <Link to="about">到about</Link>
       <Outlet />
     </div>
   )
