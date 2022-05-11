@@ -9,5 +9,6 @@
 - File based routing,基于文件的路由
 - windicss支持
 - redux
+- dark mode
 
 
