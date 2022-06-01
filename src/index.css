@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
-html.dark {
-  background: #121212;
+html{
+  color: #b5b1b1;
+}
+html.dark{
+  background: #222222;
+  color: #FAFAFA60;
 }
