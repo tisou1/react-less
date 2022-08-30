@@ -22,7 +22,7 @@
     "react-router-dom": "6.3.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "0.26.1",
+    "@antfu/eslint-config": "0.26.2",
     "@types/node": "18.7.12",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
