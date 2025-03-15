@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router'
 import type { RootState } from '~/store'
 
 export default function Home() {
@@ -8,8 +8,6 @@ export default function Home() {
     <div>
       <div>Home,count:{counter.value}</div>
       <Link to="/">返回首页</Link>
-      <Link to="home">到home</Link>
-
       <Outlet />
     </div>
   )
