@@ -1,7 +1,7 @@
 {
   "name": "react-less",
-  "private": true,
   "version": "0.1.0",
+  "private": true,
   "scripts": {
     "dev": "vite --port 3333 --open",
     "build": "tsc && vite build",
@@ -35,5 +35,6 @@
     "vite-plugin-windicss": "1.8.10",
     "vitest": "0.26.2",
     "windicss": "3.5.6"
-  }
+  },
+  "packageManager": "pnpm@10.6.3+sha512.bb45e34d50a9a76e858a95837301bfb6bd6d35aea2c5d52094fa497a467c43f5c440103ce2511e9e0a2f89c3d6071baac3358fc68ac6fb75e2ceb3d2736065e6"
 }
