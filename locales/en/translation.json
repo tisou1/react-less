@@ -1,0 +1,7 @@
+{
+  "hello": {
+    "world": "Hello World."
+  },
+  "change": "Change",
+  "placeholder":"Enter your name"
+}

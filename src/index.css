@@ -1,6 +1,4 @@
-@import "tailwindcss";
-
-@custom-variant dark (&:where(.dark, .dark *));
+@import './tailwind.css';
 
 body {
   margin: 0;
@@ -16,10 +14,6 @@ code {
     monospace;
 }
 
-html{
-  color: #b5b1b1;
-}
-html.dark{
-  background: #222222;
-  color: #FAFAFA60;
+body{
+  @apply bg-background text-foreground;
 }

@@ -55,7 +55,7 @@ export default function Header() {
       i18n.changeLanguage('en')
   }
   return (
-    <div className="w-full flex justify-end items-center z-[100] fixed h-16 sm:h-10 sm:py-0 sm:px-6 text-center text-gray-700 dark:text-gray-200 ">
+    <div className="w-full flex justify-end items-center z-[100] fixed h-16 sm:py-0 sm:px-6 text-cente border-b border-gray-200 dark:border-white">
       <div onClick={changeLanguage} className="mr-3">{t('change')}</div>
       <div className="them flex items-center">
         <div className="cursor-pointer block dark:hidden" onClick={_ => __changeTheme('dark')}>

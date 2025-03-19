@@ -7,7 +7,8 @@ import { BrowserRouter as Router, useRoutes } from 'react-router'
 // import 'virtual:windi.css'
 import { Provider } from 'react-redux'
 import store from './store'
-import Header from '~/layout/header'
+import Layout from '~/layout'
+
 import routes from '~react-pages'
 
 const root = createRoot(document.getElementById('root')!)
@@ -22,10 +23,11 @@ const App = () => {
 
 root.render(
   <Provider store={store}>
-    <Header />
-    <Router>
-      <App />
-    </Router>
+    <Layout>
+      <Router>
+        <App />
+      </Router>
+    </Layout>
   </Provider>,
 )
 

@@ -1,26 +1,41 @@
-import { useDispatch, useSelector } from 'react-redux'
-import { Link, Outlet } from 'react-router'
-import { useTranslation } from 'react-i18next'
-import type { RootState } from '~/store'
-import { decremented, incremented } from '~/store/reducers/counterSlice'
+import {useNavigate} from 'react-router'
+import React, { useState, useEffect, useRef } from 'react'
+import { clsx } from 'clsx'
 
 const Index = () => {
-  const { t } = useTranslation()
-  const { counter } = useSelector((state: RootState) => state)
-  const dispatch = useDispatch()
+
+  const [name, setName] = useState('')
+  const nameRef = useRef('')
+  const navigate = useNavigate()
+
+  const handleClick = () => {
+    navigate(`/hi/${name}`)
+  }
+
+  const hancleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setName(e.target.value)
+    nameRef.current = e.target.value
+  }
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!!name && e.key === 'Enter' ) {
+      handleClick()
+    }
+  }
+
 
   return (
     <div
-      className="text-emerald-400  text-2xl pt-16 sm:pt-1 dark:bg-black dark:text-white"
-    >{t('hello.world')}
-      <div className="flex justify-center items-center bg-black-900">
-        <div className="text-2x text-pink-800 w-60px h-24px">{counter.value}</div>
-        <div onClick={() => dispatch(incremented())} className="text-2xl text-blue-500/50 w-24px h-24px leading-24px cursor-pointer bg-gray-200  dark:bg--gray-700  rounded-4px mr-8px text-center">+</div>
-        <div onClick={() => dispatch(decremented())} className="text-2xl text-blue-500 w-24px h-24px leading-24px cursor-pointer bg-gray-200  dark:bg--gray-70 rounded-4px text-center">-</div>
-      </div>
-
-      <Link to="/about">到about</Link>
-      <Outlet />
+      className="flex justify-center mt-12 text-emerald-400  text-2xl pt-16 sm:pt-1 dark:bg-black dark:text-white"
+    >
+      <input 
+        className='border border-gray-100 outline-0 px-4 py-2 rounded-xl mr-2' 
+        placeholder="What's your name?" 
+        type='text' 
+        onChange={hancleChange}
+        onKeyDown={handleKeyDown}
+      />
+      <button className={clsx('border border-amber-100 px-5 py-1 rounded-xl',{'cursor-pointer':!!name})} onClick={handleClick} disabled={!name} >GO</button>
     </div>
   )
 }
