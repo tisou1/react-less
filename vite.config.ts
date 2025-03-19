@@ -1,10 +1,11 @@
-import * as path from 'path'
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import Pages from 'vite-plugin-pages'
+import * as path from 'node:path'
 // import WindiCSS from 'vite-plugin-windicss'
+// @ts-expect-error import
 import tailwindcss from '@tailwindcss/vite'
+import react from '@vitejs/plugin-react'
 import AutoImport from 'unplugin-auto-import/vite'
+import { defineConfig } from 'vite'
+import Pages from 'vite-plugin-pages'
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve: {

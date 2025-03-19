@@ -1,13 +1,14 @@
-import { t } from 'i18next'
 import React from 'react'
-import i18n from '../i18next'
 import { __changeTheme } from '~/composables'
+import i18n from '../i18next'
+
 const darkIcon = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="18"
     height="18"
-    viewBox="0 0 24 24">
+    viewBox="0 0 24 24"
+  >
     <g fill="none" fillRule="evenodd" transform="translate(-444 -204)">
       <path
         fill="currentColor"
@@ -25,7 +26,8 @@ const lightIcon = (
     xmlns="http://www.w3.org/2000/svg"
     width="20"
     height="20"
-    viewBox="0 0 24 24">
+    viewBox="0 0 24 24"
+  >
     <g fill="none" fillRule="evenodd" transform="translate(-444 -204)">
       <g fill="currentColor" transform="translate(354 144)">
         <path

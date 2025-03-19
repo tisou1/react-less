@@ -1,9 +1,7 @@
 import i18n from 'i18next'
-import { initReactI18next } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import Backend from 'i18next-http-backend'
-import cnResources from '../../locales/zh/translation.json'
-import enResources from '../../locales/en/translation.json'
+import { initReactI18next } from 'react-i18next'
 
 i18n
   .use(Backend) // 加载远程多语言数据
@@ -13,7 +11,7 @@ i18n
     // lng: 'en', // if you're using a language detector, do not define the lng option
     fallbackLng: 'cn', // 设置得语言不可用时,用这个语言
     defaultNS: 'translation', // 默认使用translation这个命名空间
-    ns: ['translation','common'], // 指定命名空间列表
+    ns: ['translation', 'common'], // 指定命名空间列表
     // the translations
     // (tip move them in a JSON file and import them,
     // or even better, manage them via a UI: https://react.i18next.com/guides/multiple-translation-files#manage-your-translations-with-a-management-gui)
@@ -30,7 +28,6 @@ i18n
       loadPath: '/locales/{{lng}}/{{ns}}.json', // 加载远程多语言数据的路径
     },
     debug: false, // 开启调试模式
-
 
     interpolation: {
       escapeValue: false, // react already safes from xss => https://www.i18next.com/translation-function/interpolation#unescape

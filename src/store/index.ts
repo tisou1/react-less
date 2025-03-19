@@ -1,4 +1,4 @@
-import { Store, configureStore } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit'
 // import counterReducer from './reducers/counterSlice'
 import {
   booleanSlice,

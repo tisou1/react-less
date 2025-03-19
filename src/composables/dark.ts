@@ -10,7 +10,6 @@ else if (__theme === 'dark')
   setTheme('dark')
 
 function setTheme(newTheme: string) {
-  console.log(newTheme)
   window.__theme = newTheme
   if (newTheme === 'dark')
     document.documentElement.classList.add('dark')
@@ -24,7 +23,9 @@ function __changeTheme(newTheme: string) {
   try {
     localStorage.setItem('theme', newTheme)
   }
-  catch (err) {}
+  catch (err) {
+    console.error('localStorage is not available', err)
+  }
 }
 
 export {

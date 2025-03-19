@@ -1,7 +1,7 @@
-import counterReducer from './counterSlice'
 import booleanSlice from './booleanSlice'
+import counterReducer from './counterSlice'
 
 export {
+  booleanSlice,
   counterReducer,
-  booleanSlice
 }

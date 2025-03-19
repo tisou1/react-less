@@ -1,19 +1,19 @@
 import React, { Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
-import '~/i18next'
-import './index.css'
-// import App from './App'
-import { BrowserRouter as Router, useRoutes } from 'react-router'
 // import 'virtual:windi.css'
 import { Provider } from 'react-redux'
-import store from './store'
-import Layout from '~/layout'
-
+// import App from './App'
+import { BrowserRouter as Router, useRoutes } from 'react-router'
 import routes from '~react-pages'
+import Layout from '~/layout'
+import store from './store'
+import '~/i18next'
+
+import './index.css'
 
 const root = createRoot(document.getElementById('root')!)
 
-const App = () => {
+function App() {
   return (
     <Suspense fallback={<p>...</p>}>
       {useRoutes(routes)}
