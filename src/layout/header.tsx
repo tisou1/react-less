@@ -56,14 +56,53 @@ export default function Header() {
     else if (language === 'zh-CN')
       i18n.changeLanguage('en')
   }
+
+  const handleChangeTheme = (event: React.MouseEvent<HTMLDivElement>, theme: 'dark' | 'light') => {
+    const isDark = theme === 'dark'
+    // 在不支持的浏览器里不做动画
+    if (!document.startViewTransition) {
+      __changeTheme(theme)
+      return
+    }
+    // 开始一次视图过渡：
+    const transition = document.startViewTransition(() => __changeTheme(theme))
+    transition.ready.then(() => {
+      const x = event.clientX
+      const y = event.clientY
+      // 计算按钮到最远点的距离用作裁剪圆形的半径
+      const endRadius = Math.hypot(
+        Math.max(x, innerWidth - x),
+        Math.max(y, innerHeight - y),
+      )
+
+      const clipPath = [
+        `circle(0px at ${x}px ${y}px)`,
+        `circle(${endRadius}px at ${x}px ${y}px)`,
+      ]
+      // 开始动画
+      document.documentElement.animate(
+        {
+          clipPath: isDark ? clipPath.reverse() : clipPath,
+        },
+        {
+          duration: 400,
+          easing: 'ease-in',
+          pseudoElement: isDark
+            ? '::view-transition-old(root)'
+            : '::view-transition-new(root)',
+        },
+      )
+    })
+  }
+
   return (
     <div className="w-full flex justify-end items-center z-[100] fixed h-16 sm:py-0 sm:px-6 text-cente border-b border-gray-200 dark:border-white">
       <div onClick={changeLanguage} className="mr-3">{t('change')}</div>
       <div className="them flex items-center">
-        <div className="cursor-pointer block dark:hidden" onClick={_ => __changeTheme('dark')}>
+        <div className="cursor-pointer block dark:hidden" onClick={e => handleChangeTheme(e, 'dark')}>
           {darkIcon}
         </div>
-        <div className="cursor-pointer hidden dark:block" onClick={_ => __changeTheme('light')}>
+        <div className="cursor-pointer hidden dark:block" onClick={e => handleChangeTheme(e, 'light')}>
           {lightIcon}
         </div>
       </div>
