@@ -3,5 +3,172 @@
     "world": "Hello World."
   },
   "change": "Change",
-  "placeholder": "Enter your name"
+  "placeholder": "Enter your name",
+  "nav": {
+    "home": "Home",
+    "todo": "Todo",
+    "playground": "Playground"
+  },
+  "theme": {
+    "toDark": "Switch to dark mode",
+    "toLight": "Switch to light mode"
+  },
+  "footer": {
+    "tagline": "Built for learning"
+  },
+  "hero": {
+    "title": "Welcome to react-less",
+    "description": "A lightweight scaffold with React Compiler, Tailwind CSS v4 and shadcn/ui. Every component below is a live, interactive example."
+  },
+  "showcase": {
+    "title": "Component Showcase",
+    "subtitle": "Live interactive examples of shadcn/ui components",
+    "tabs": {
+      "display": "Display",
+      "form": "Forms",
+      "interaction": "Interactions",
+      "notification": "Notifications"
+    }
+  },
+  "display": {
+    "overview": {
+      "title": "This Week",
+      "desc": "Card · Avatar · Badge · Separator combo",
+      "name": "Alex Zhang",
+      "role": "Frontend Engineer",
+      "commits": "Commits",
+      "issues": "Issues",
+      "skeletonHint": "Skeleton placeholders:",
+      "learnMore": "Learn more",
+      "learnToast": "Skeleton is a placeholder shown while data loads"
+    },
+    "badges": {
+      "title": "Badge Variants",
+      "desc": "Four presets that follow the theme",
+      "skeletonHint": "Skeleton shimmer (loading state):",
+      "radius": "radius follows --radius"
+    }
+  },
+  "form": {
+    "title": "Preferences",
+    "desc": "Label · Checkbox · Switch · Select · Textarea combo",
+    "notify": {
+      "title": "Push notifications",
+      "desc": "Notify me on new comments"
+    },
+    "digest": {
+      "title": "Weekly digest",
+      "desc": "A summary every Monday"
+    },
+    "frequency": {
+      "label": "Frequency",
+      "placeholder": "Pick a frequency",
+      "realtime": "Realtime",
+      "daily": "Daily",
+      "weekly": "Weekly",
+      "never": "Never"
+    },
+    "bio": {
+      "label": "Bio",
+      "placeholder": "Tell us about yourself…"
+    },
+    "agree": "I have read and agree to the terms of service",
+    "reset": "Reset",
+    "save": "Save",
+    "toast": {
+      "needAgree": "Please accept the terms first",
+      "saved": "Preferences saved",
+      "savedDesc": "Frequency: {{frequency}}",
+      "reset": "Form reset"
+    }
+  },
+  "interaction": {
+    "dialog": {
+      "title": "Dialog",
+      "desc": "Overlay with focus trapping",
+      "button": "Open dialog",
+      "heading": "Confirm action",
+      "body": "A shadcn/ui dialog built on Radix UI with Esc close and focus trapping.",
+      "cancel": "Cancel",
+      "confirm": "Confirm",
+      "confirmToast": "Action confirmed"
+    },
+    "dropdown": {
+      "title": "Dropdown Menu",
+      "desc": "Context-menu style actions",
+      "button": "Account menu",
+      "label": "My Account",
+      "profile": "Profile",
+      "settings": "Settings",
+      "logout": "Log out",
+      "toast": {
+        "profile": "Profile",
+        "settings": "Settings opened",
+        "logout": "Logged out"
+      }
+    },
+    "tooltip": {
+      "title": "Tooltip",
+      "desc": "Hover for details",
+      "notifications": "Notifications",
+      "settings": "Settings",
+      "profile": "Profile"
+    }
+  },
+  "notify": {
+    "title": "Sonner Notifications",
+    "desc": "Toaster mounted in Layout, pops bottom-right, follows the theme",
+    "successBtn": "Success",
+    "errorBtn": "Error",
+    "promiseBtn": "Promise",
+    "actionBtn": "Action",
+    "successToast": "Saved!",
+    "errorToast": "Request failed, please retry",
+    "deploy": {
+      "loading": "Deploying…",
+      "success": "Deployed",
+      "error": "Deploy failed"
+    },
+    "newVersion": "New version available",
+    "newVersionDesc": "v0.2.0 ships component updates",
+    "view": "View",
+    "releaseToast": "Opening changelog"
+  },
+  "todo": {
+    "title": "Todo List",
+    "desc": "Checkbox · DropdownMenu · Tabs · Dialog · Sonner in action",
+    "stats": {
+      "items": "{{count}} items",
+      "active": "{{count}} active"
+    },
+    "addPlaceholder": "Add a todo, press Enter to confirm",
+    "add": "Add",
+    "filter": {
+      "all": "All",
+      "active": "Active",
+      "done": "Done"
+    },
+    "empty": "No todos yet. Add one to get started",
+    "edit": "Edit",
+    "clear": "Clear done",
+    "hint": "Saved to localStorage in real time, survives refresh",
+    "toast": {
+      "empty": "Todo text cannot be empty",
+      "added": "Todo added",
+      "updated": "Todo updated",
+      "deleted": "Deleted: {{text}}",
+      "cleared": "Cleared {{count}} done todos"
+    },
+    "delete": {
+      "title": "Delete todo",
+      "desc": "Delete \"{{text}}\"? This action cannot be undone.",
+      "cancel": "Cancel",
+      "confirm": "Delete"
+    },
+    "aria": {
+      "complete": "Complete {{text}}",
+      "menu": "Row actions",
+      "save": "Save edit"
+    }
+  }
 }

@@ -23,11 +23,11 @@ function App() {
 
 root.render(
   <Provider store={store}>
-    <Layout>
-      <Router>
+    <Router>
+      <Layout>
         <App />
-      </Router>
-    </Layout>
+      </Layout>
+    </Router>
   </Provider>,
 )
 

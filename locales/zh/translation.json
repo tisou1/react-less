@@ -3,5 +3,172 @@
     "world": "你好世界."
   },
   "change": "改变",
-  "placeholder": "输入你的名字"
+  "placeholder": "输入你的名字",
+  "nav": {
+    "home": "首页",
+    "todo": "Todo",
+    "playground": "Playground"
+  },
+  "theme": {
+    "toDark": "切换到深色模式",
+    "toLight": "切换到浅色模式"
+  },
+  "footer": {
+    "tagline": "为学习而生"
+  },
+  "hero": {
+    "title": "欢迎来到 react-less",
+    "description": "集成 React Compiler、Tailwind CSS v4 与 shadcn/ui 的轻量脚手架，下方组件均为可交互的真实示例。"
+  },
+  "showcase": {
+    "title": "组件展示区",
+    "subtitle": "shadcn/ui 组件的真实可交互示例",
+    "tabs": {
+      "display": "展示",
+      "form": "表单",
+      "interaction": "交互",
+      "notification": "通知"
+    }
+  },
+  "display": {
+    "overview": {
+      "title": "本周概览",
+      "desc": "Card · Avatar · Badge · Separator 组合",
+      "name": "张小帅",
+      "role": "前端工程师",
+      "commits": "提交",
+      "issues": "Issue",
+      "skeletonHint": "Skeleton 加载占位：",
+      "learnMore": "了解更多",
+      "learnToast": "Skeleton 是数据加载前的占位组件"
+    },
+    "badges": {
+      "title": "Badge 变体",
+      "desc": "四种预设外观，随明暗主题联动",
+      "skeletonHint": "Skeleton 微光动画（加载态）：",
+      "radius": "radius 联动 --radius"
+    }
+  },
+  "form": {
+    "title": "偏好设置",
+    "desc": "Label · Checkbox · Switch · Select · Textarea 组合",
+    "notify": {
+      "title": "推送通知",
+      "desc": "收到新评论时提醒我"
+    },
+    "digest": {
+      "title": "每周摘要",
+      "desc": "每周一发送上周总结"
+    },
+    "frequency": {
+      "label": "通知频率",
+      "placeholder": "选择频率",
+      "realtime": "实时",
+      "daily": "每天",
+      "weekly": "每周",
+      "never": "从不"
+    },
+    "bio": {
+      "label": "个人简介",
+      "placeholder": "简单介绍一下自己…"
+    },
+    "agree": "我已阅读并同意服务条款",
+    "reset": "重置",
+    "save": "保存设置",
+    "toast": {
+      "needAgree": "请先勾选同意服务条款",
+      "saved": "偏好已保存",
+      "savedDesc": "通知频率：{{frequency}}",
+      "reset": "表单已重置"
+    }
+  },
+  "interaction": {
+    "dialog": {
+      "title": "Dialog 对话框",
+      "desc": "带遮罩与焦点管理",
+      "button": "打开对话框",
+      "heading": "确认操作",
+      "body": "这是一个 shadcn/ui Dialog，基于 Radix UI 构建，支持 Esc 关闭与焦点圈定。",
+      "cancel": "取消",
+      "confirm": "确认",
+      "confirmToast": "操作已确认"
+    },
+    "dropdown": {
+      "title": "DropdownMenu 菜单",
+      "desc": "右键菜单式操作入口",
+      "button": "账户菜单",
+      "label": "我的账户",
+      "profile": "个人资料",
+      "settings": "设置",
+      "logout": "退出登录",
+      "toast": {
+        "profile": "个人资料",
+        "settings": "打开设置",
+        "logout": "已退出登录"
+      }
+    },
+    "tooltip": {
+      "title": "Tooltip 提示",
+      "desc": "悬停查看说明文字",
+      "notifications": "通知中心",
+      "settings": "系统设置",
+      "profile": "个人主页"
+    }
+  },
+  "notify": {
+    "title": "Sonner 通知",
+    "desc": "Toaster 已挂载在 Layout，右下角弹出，明暗主题自动联动",
+    "successBtn": "成功通知",
+    "errorBtn": "错误通知",
+    "promiseBtn": "Promise 通知",
+    "actionBtn": "操作型通知",
+    "successToast": "保存成功！",
+    "errorToast": "网络请求失败，请重试",
+    "deploy": {
+      "loading": "正在部署…",
+      "success": "部署完成",
+      "error": "部署失败"
+    },
+    "newVersion": "发现新版本",
+    "newVersionDesc": "v0.2.0 包含若干组件更新",
+    "view": "查看",
+    "releaseToast": "跳转更新日志"
+  },
+  "todo": {
+    "title": "待办清单",
+    "desc": "Checkbox · DropdownMenu · Tabs · Dialog · Sonner 综合实战",
+    "stats": {
+      "items": "{{count}} 项",
+      "active": "{{count}} 未完成"
+    },
+    "addPlaceholder": "添加一条待办，回车确认",
+    "add": "添加",
+    "filter": {
+      "all": "全部",
+      "active": "进行中",
+      "done": "已完成"
+    },
+    "empty": "暂无待办，添加一条开始吧",
+    "edit": "编辑",
+    "clear": "清理已完成",
+    "hint": "数据实时保存到 localStorage，刷新不丢失",
+    "toast": {
+      "empty": "待办内容不能为空",
+      "added": "已添加待办",
+      "updated": "已更新待办",
+      "deleted": "已删除：{{text}}",
+      "cleared": "已清理 {{count}} 条已完成待办"
+    },
+    "delete": {
+      "title": "删除待办",
+      "desc": "确定要删除「{{text}}」吗？此操作不可撤销。",
+      "cancel": "取消",
+      "confirm": "删除"
+    },
+    "aria": {
+      "complete": "完成 {{text}}",
+      "menu": "操作菜单",
+      "save": "保存编辑"
+    }
+  }
 }

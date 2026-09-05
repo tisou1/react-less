@@ -9,7 +9,8 @@ i18n
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     // lng: 'en', // if you're using a language detector, do not define the lng option
-    fallbackLng: 'cn', // 设置得语言不可用时,用这个语言
+    fallbackLng: 'zh', // 设置得语言不可用时,用这个语言
+    load: 'languageOnly', // zh-CN -> zh，与 locales/zh 目录对齐
     defaultNS: 'translation', // 默认使用translation这个命名空间
     ns: ['translation', 'common'], // 指定命名空间列表
     // the translations
