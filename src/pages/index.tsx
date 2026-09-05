@@ -1,6 +1,8 @@
-import { clsx } from 'clsx'
-import React, { useRef, useState } from 'react'
+import type { ChangeEvent, KeyboardEvent } from 'react'
+import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
+import { Button } from '~/components/ui/button'
+import { Input } from '~/components/ui/input'
 
 function Index() {
   const [name, setName] = useState('')
@@ -11,29 +13,27 @@ function Index() {
     navigate(`/hi/${name}`)
   }
 
-  const hancleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setName(e.target.value)
     nameRef.current = e.target.value
   }
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (!!name && e.key === 'Enter') {
       handleClick()
     }
   }
 
   return (
-    <div
-      className="flex justify-center mt-12 text-emerald-400  text-2xl pt-16 sm:pt-1 dark:bg-black dark:text-white"
-    >
-      <input
-        className="border border-gray-100 outline-0 px-4 py-2 rounded-xl mr-2"
+    <div className="flex items-center justify-center gap-2 mt-12 pt-16 sm:pt-1">
+      <Input
+        className="w-64"
         placeholder="What's your name?"
         type="text"
-        onChange={hancleChange}
+        onChange={handleChange}
         onKeyDown={handleKeyDown}
       />
-      <button className={clsx('border border-amber-100 px-5 py-1 rounded-xl', { 'cursor-pointer': !!name })} onClick={handleClick} disabled={!name}>GO</button>
+      <Button onClick={handleClick} disabled={!name}>GO</Button>
     </div>
   )
 }

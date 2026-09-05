@@ -4,22 +4,20 @@
     "jsx": "react-jsx",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "useDefineForClassFields": true,
-    "baseUrl": "./",
     "module": "ESNext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["./src/*"]
     },
     "resolveJsonModule": true,
     "types": [
       "react",
-      "vite-plugin-pages/client"
+      "vite-plugin-pages/client-react"
     ],
     "allowJs": false,
     "strict": true,
     "noEmit": true,
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": false,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "skipLibCheck": false
