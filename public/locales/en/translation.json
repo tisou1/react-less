@@ -7,7 +7,10 @@
   "nav": {
     "home": "Home",
     "todo": "Todo",
-    "playground": "Playground"
+    "playground": "Playground",
+    "components": "Components",
+    "data": "Data",
+    "settings": "Settings"
   },
   "theme": {
     "toDark": "Switch to dark mode",
@@ -77,7 +80,7 @@
     "save": "Save",
     "toast": {
       "needAgree": "Please accept the terms first",
-      "saved": "Preferences saved",
+      "saved": "Demo submitted (not persisted)",
       "savedDesc": "Frequency: {{frequency}}",
       "reset": "Form reset"
     }
@@ -136,7 +139,7 @@
   },
   "todo": {
     "title": "Todo List",
-    "desc": "Checkbox · DropdownMenu · Tabs · Dialog · Sonner in action",
+    "desc": "Capture, complete and organize tasks. Your list stays on this device between visits.",
     "stats": {
       "items": "{{count}} items",
       "active": "{{count}} active"
@@ -170,5 +173,109 @@
       "menu": "Row actions",
       "save": "Save edit"
     }
+  },
+  "app": {
+    "loading": "Loading page…",
+    "home": "Back to home",
+    "copied": "Commands copied",
+    "copy": "Copy commands",
+    "copyFailed": "Could not copy. Select and copy the commands manually.",
+    "navigation": "Main navigation",
+    "menu": "Toggle menu",
+    "language": "Language",
+    "skip": "Skip to content",
+    "storageFailed": "Changes are available in this session, but could not be saved on this device. Check browser storage permissions before refreshing.",
+    "demoHint": "Interactive component examples. Form values last only while this demo is open; notifications and account actions are simulations.",
+    "notFound": "Page not found",
+    "notFoundDesc": "Check the address, or return home to explore the examples.",
+    "greeting": "Hello, {{name}}.",
+    "playgroundDesc": "Explore Redux state updates and translation namespaces.",
+    "increment": "Increment counter",
+    "decrement": "Decrement counter",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "close": "Close"
+  },
+  "landing": {
+    "eyebrow": "A SMALL START. ROOM TO BUILD.",
+    "title": "Less setup.",
+    "accent": "More making.",
+    "description": "A lightweight foundation for your next idea. Explore working components, try complete examples, and make it your own.",
+    "explore": "Explore components",
+    "tryData": "Try the data example",
+    "quickStart": "Quick start",
+    "install": "Install dependencies and start locally",
+    "ready": "Ready to build",
+    "routing": "Try a dynamic route",
+    "go": "Open greeting",
+    "modules": "Start with something that works.",
+    "modulesDesc": "Small, complete examples you can take into your own project.",
+    "note": "Local examples. No account or backend required.",
+    "components": {
+      "title": "Components",
+      "desc": "Explore display, forms, dialogs and feedback."
+    },
+    "data": {
+      "title": "Data examples",
+      "desc": "Search, filter and edit a local project list."
+    },
+    "settings": {
+      "title": "Preferences",
+      "desc": "Make the theme, language and preferences yours."
+    },
+    "todo": {
+      "title": "Todo list",
+      "desc": "Capture tasks and keep track of what is done."
+    }
+  },
+  "settings": {
+    "title": "Preferences",
+    "description": "A few choices to make this starter feel like yours. Preferences are stored on this device.",
+    "appearance": "Appearance",
+    "immediate": "Applies immediately and is saved on this device.",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "notifications": "Notifications",
+    "localOnly": "Example preferences only. No real notifications or emails are sent.",
+    "saved": "Preferences saved on this device",
+    "reset": "Reset to defaults",
+    "resetHint": "Default notification preferences restored. Save to keep them."
+  },
+  "data": {
+    "title": "Project list",
+    "description": "A complete data example: search, filter, edit and save. Everything stays in your browser.",
+    "create": "New project",
+    "search": "Search project names",
+    "status": "Status",
+    "all": "All statuses",
+    "sort": "Sort by name",
+    "asc": "Name: A → Z",
+    "desc": "Name: Z → A",
+    "name": "Project name",
+    "created": "Created",
+    "actions": "Actions",
+    "planned": "Planned",
+    "active": "In progress",
+    "done": "Completed",
+    "edit": "Edit project",
+    "delete": "Delete project",
+    "editNamed": "Edit {{name}}",
+    "deleteNamed": "Delete {{name}}",
+    "details": "Description",
+    "editorHint": "Give your project a name and choose a status.",
+    "empty": "No matching projects",
+    "emptyDesc": "Try another search, clear filters or create a project.",
+    "clearFilters": "Clear filters",
+    "pagination": "{{total}} projects · Page {{page}} of {{pages}}",
+    "previous": "Previous page",
+    "next": "Next page",
+    "localHint": "Saved on this device. Clearing browser data removes your changes.",
+    "restore": "Restore sample data",
+    "restoreConfirm": "Replace all projects with the original samples? Your changes will be lost.",
+    "deleteConfirm": "Delete “{{name}}”? This cannot be undone.",
+    "updated": "Project list updated",
+    "seedName": "Sample project {{index}}",
+    "seedDescription": "An editable example. Add your own project details."
   }
 }

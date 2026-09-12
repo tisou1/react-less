@@ -6,8 +6,11 @@
   "placeholder": "输入你的名字",
   "nav": {
     "home": "首页",
-    "todo": "Todo",
-    "playground": "Playground"
+    "todo": "待办",
+    "playground": "技术演示",
+    "components": "组件",
+    "data": "数据示例",
+    "settings": "设置"
   },
   "theme": {
     "toDark": "切换到深色模式",
@@ -74,10 +77,10 @@
     },
     "agree": "我已阅读并同意服务条款",
     "reset": "重置",
-    "save": "保存设置",
+    "save": "保存",
     "toast": {
       "needAgree": "请先勾选同意服务条款",
-      "saved": "偏好已保存",
+      "saved": "演示表单已提交（不持久化）",
       "savedDesc": "通知频率：{{frequency}}",
       "reset": "表单已重置"
     }
@@ -136,7 +139,7 @@
   },
   "todo": {
     "title": "待办清单",
-    "desc": "Checkbox · DropdownMenu · Tabs · Dialog · Sonner 综合实战",
+    "desc": "记录任务、完成和整理。清单会保存在当前设备，刷新后仍可继续。",
     "stats": {
       "items": "{{count}} 项",
       "active": "{{count}} 未完成"
@@ -170,5 +173,109 @@
       "menu": "操作菜单",
       "save": "保存编辑"
     }
+  },
+  "app": {
+    "loading": "正在加载页面…",
+    "home": "返回首页",
+    "copied": "命令已复制",
+    "copy": "复制命令",
+    "copyFailed": "复制失败，请手动选中并复制命令。",
+    "navigation": "主导航",
+    "menu": "展开或收起菜单",
+    "language": "语言",
+    "skip": "跳至正文",
+    "storageFailed": "当前操作已保留，但未能保存到此设备。刷新前请检查浏览器的存储权限。",
+    "demoHint": "可交互的组件示例。表单内容仅在本次演示打开期间保留；通知和账户操作均为模拟演示。",
+    "notFound": "没有找到这个页面",
+    "notFoundDesc": "请检查地址，或返回首页继续探索示例。",
+    "greeting": "你好，{{name}}。",
+    "playgroundDesc": "体验 Redux 状态更新和国际化命名空间。",
+    "increment": "增加计数",
+    "decrement": "减少计数",
+    "cancel": "取消",
+    "confirm": "确认",
+    "close": "关闭"
+  },
+  "landing": {
+    "eyebrow": "轻量起步，自由构建",
+    "title": "少一点配置，",
+    "accent": "多一点创造。",
+    "description": "为下一个想法准备的轻量起点。从可交互组件到完整页面示例，基础已就绪，接下来交给你的创意。",
+    "explore": "探索组件",
+    "tryData": "体验数据示例",
+    "quickStart": "快速开始",
+    "install": "安装依赖，启动本地开发",
+    "ready": "开始构建",
+    "routing": "试一试动态路由",
+    "go": "打开问候页",
+    "modules": "从一个能用的例子开始。",
+    "modulesDesc": "简洁、完整，可直接带进你的下一个项目。",
+    "note": "本地示例，无需账户或后端服务。",
+    "components": {
+      "title": "组件展示",
+      "desc": "浏览基础展示、表单、弹窗与反馈组件。"
+    },
+    "data": {
+      "title": "数据示例",
+      "desc": "搜索、筛选和编辑，体验完整数据流程。"
+    },
+    "settings": {
+      "title": "偏好设置",
+      "desc": "调整外观、语言和通知偏好，让界面更顺手。"
+    },
+    "todo": {
+      "title": "待办清单",
+      "desc": "记录想做的事，让每一步进展都看得见。"
+    }
+  },
+  "settings": {
+    "title": "偏好设置",
+    "description": "用几个简单的选择，让这个起点更适合你。偏好保存在当前设备。",
+    "appearance": "界面外观",
+    "immediate": "立即生效，并保存到当前设备。",
+    "light": "浅色",
+    "dark": "深色",
+    "system": "跟随系统",
+    "notifications": "通知偏好",
+    "localOnly": "仅用于演示设置保存，不会发送真实通知或邮件。",
+    "saved": "偏好已保存到当前设备",
+    "reset": "恢复默认",
+    "resetHint": "已恢复默认通知偏好，点击保存后生效。"
+  },
+  "data": {
+    "title": "项目列表",
+    "description": "从搜索、筛选到编辑和保存，体验完整的数据交互。所有内容都留在你的浏览器里。",
+    "create": "新建项目",
+    "search": "搜索项目名称",
+    "status": "状态",
+    "all": "全部状态",
+    "sort": "按名称排序",
+    "asc": "名称：升序",
+    "desc": "名称：降序",
+    "name": "项目名称",
+    "created": "创建日期",
+    "actions": "操作",
+    "planned": "未开始",
+    "active": "进行中",
+    "done": "已完成",
+    "edit": "编辑项目",
+    "delete": "删除项目",
+    "editNamed": "编辑 {{name}}",
+    "deleteNamed": "删除 {{name}}",
+    "details": "项目描述",
+    "editorHint": "为项目起一个名字，并选择当前状态。",
+    "empty": "没有匹配的项目",
+    "emptyDesc": "尝试其他关键词、清除筛选，或新建一个项目。",
+    "clearFilters": "清除筛选",
+    "pagination": "共 {{total}} 个项目 · 第 {{page}} / {{pages}} 页",
+    "previous": "上一页",
+    "next": "下一页",
+    "localHint": "数据保存在当前设备，清除浏览器数据会移除修改。",
+    "restore": "恢复示例数据",
+    "restoreConfirm": "将所有项目替换为初始示例？你的修改将丢失。",
+    "deleteConfirm": "确定删除“{{name}}”？此操作无法撤销。",
+    "updated": "项目列表已更新",
+    "seedName": "示例项目 {{index}}",
+    "seedDescription": "这是一个可编辑的示例，试着填写你自己的项目内容。"
   }
 }

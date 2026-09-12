@@ -1,5 +1,4 @@
 import * as path from 'node:path'
-// import WindiCSS from 'vite-plugin-windicss'
 // @ts-expect-error import
 import babel from '@rolldown/plugin-babel'
 import tailwindcss from '@tailwindcss/vite'
@@ -18,7 +17,7 @@ export default defineConfig({
     tailwindcss(), // atomic css
     react(),
     babel({ presets: [reactCompilerPreset()] }), // react compiler
-    Pages(), // baesd files routing
+    Pages(), // file-based routing
     AutoImport({
       include: [
         /\.[tj]sx?$/, // .ts, .tsx, .js ,.jsx

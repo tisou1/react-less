@@ -1,23 +1,20 @@
 import { useSyncExternalStore } from 'react'
+import { defaultPreferences } from '~/lib/preferences'
+import { getPreferences } from './dark'
 
 function subscribe(callback: () => void) {
+  window.addEventListener('preferences-change', callback)
+  return () => window.removeEventListener('preferences-change', callback)
+}
+export function usePreferences() {
+  return useSyncExternalStore(subscribe, getPreferences, () => defaultPreferences)
+}
+function subscribeTheme(callback: () => void) {
   const observer = new MutationObserver(callback)
-  observer.observe(document.documentElement, {
-    attributes: true,
-    attributeFilter: ['class'],
-  })
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
   return () => observer.disconnect()
 }
-
-function getSnapshot(): 'dark' | 'light' {
-  return document.documentElement.classList.contains('dark') ? 'dark' : 'light'
-}
-
-function getServerSnapshot(): 'dark' | 'light' {
-  return 'light'
-}
-
 export function useTheme() {
-  const theme = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot)
+  const theme = useSyncExternalStore(subscribeTheme, () => document.documentElement.classList.contains('dark') ? 'dark' : 'light', () => 'light')
   return { theme }
 }

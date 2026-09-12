@@ -1,10 +1,10 @@
 import React, { Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
-// import 'virtual:windi.css'
 import { Provider } from 'react-redux'
-// import App from './App'
 import { BrowserRouter as Router, useRoutes } from 'react-router'
 import routes from '~react-pages'
+import { ErrorBoundary } from '~/components/error-boundary'
+import { LoadingState } from '~/components/page'
 import Layout from '~/layout'
 import store from './store'
 import '~/i18next'
@@ -15,30 +15,22 @@ const root = createRoot(document.getElementById('root')!)
 
 function App() {
   return (
-    <Suspense fallback={<p>...</p>}>
+    <Suspense fallback={<LoadingState />}>
       {useRoutes(routes)}
     </Suspense>
   )
 }
 
 root.render(
-  <Provider store={store}>
-    <Router>
-      <Layout>
-        <App />
-      </Layout>
-    </Router>
-  </Provider>,
+  <ErrorBoundary>
+    <Suspense fallback={<LoadingState />}>
+      <Provider store={store}>
+        <Router>
+          <Layout>
+            <ErrorBoundary><App /></ErrorBoundary>
+          </Layout>
+        </Router>
+      </Provider>
+    </Suspense>
+  </ErrorBoundary>,
 )
-
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <Provider store={store}>
-//       <Header/>
-//       <Router>
-//         <App />
-//       </Router>
-//     </Provider>
-//   </React.StrictMode>,
-//   document.getElementById('root'),
-// )

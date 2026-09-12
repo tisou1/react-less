@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -16,4 +16,20 @@ code {
 
 body{
   @apply bg-background text-foreground;
+}
+
+@layer base {
+  *, ::before, ::after { @apply border-border; }
+  :focus-visible { outline: 2px solid var(--color-ring); outline-offset: 3px; }
+  button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+  h1, h2, h3, p { overflow-wrap: anywhere; }
+}
+@layer components {
+  .native-select { @apply h-9 min-w-0 rounded-md border border-input bg-background px-3 text-sm; }
+  .settings-section { @apply grid gap-6 border-t pt-8 md:grid-cols-[1fr_1.5fr]; }
+  .settings-section h2 { @apply text-lg font-semibold; }
+  .settings-section p { @apply mt-2 text-sm leading-6 text-muted-foreground; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
 }

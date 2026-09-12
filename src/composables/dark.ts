@@ -1,33 +1,25 @@
-declare global {
-  interface Window { __theme: any }
+import type { Preferences, ThemePreference } from '~/lib/preferences'
+import { loadPreferences, savePreferences } from '~/lib/preferences'
+
+let preferences = loadPreferences()
+const media = window.matchMedia('(prefers-color-scheme: dark)')
+function applyTheme() {
+  const dark = preferences.theme === 'dark' || (preferences.theme === 'system' && media.matches)
+  document.documentElement.classList.toggle('dark', dark)
+  document.documentElement.style.colorScheme = dark ? 'dark' : 'light'
 }
-// react beta
-const __theme = localStorage.getItem('theme')
-if (!__theme)
-  window.__theme = 'light'
-
-else if (__theme === 'dark')
-  setTheme('dark')
-
-function setTheme(newTheme: string) {
-  window.__theme = newTheme
-  if (newTheme === 'dark')
-    document.documentElement.classList.add('dark')
-
-  else
-    document.documentElement.classList.remove('dark')
+export function getPreferences() {
+  return preferences
 }
-
-function __changeTheme(newTheme: string) {
-  setTheme(newTheme)
-  try {
-    localStorage.setItem('theme', newTheme)
-  }
-  catch (err) {
-    console.error('localStorage is not available', err)
-  }
+export function updatePreferences(patch: Partial<Preferences>) {
+  preferences = { ...preferences, ...patch }
+  applyTheme()
+  const saved = savePreferences(preferences)
+  window.dispatchEvent(new Event('preferences-change'))
+  return saved
 }
-
-export {
-  __changeTheme,
+export function __changeTheme(theme: ThemePreference) {
+  return updatePreferences({ theme })
 }
+media.addEventListener('change', applyTheme)
+applyTheme()

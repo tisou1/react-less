@@ -4,7 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <meta name="description" content="react-less — a lightweight React starter with interactive examples." />
+    <title>react-less</title>
+    <script>
+      try {
+        var settings = JSON.parse(localStorage.getItem('react-less:settings:v1') || 'null');
+        var valid = settings && ['light','dark','system'].includes(settings.theme) && ['en','zh','auto'].includes(settings.language) && typeof settings.notify === 'boolean' && typeof settings.digest === 'boolean';
+        var theme = valid ? settings.theme : 'system';
+        var dark = theme === 'dark' || (theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches);
+        document.documentElement.classList.toggle('dark', dark);
+        document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+      } catch (_) {
+        var dark = matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.toggle('dark', dark);
+        document.documentElement.style.colorScheme = dark ? 'dark' : 'light';
+      }
+    </script>
   </head>
   <body class="font-sans">
     <div id="root"></div>

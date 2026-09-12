@@ -1,14 +1,13 @@
 import { useParams } from 'react-router'
+import { HomeLink, PageHeading } from '~/components/page'
 
 export default function Name() {
   const { name } = useParams()
-
+  const { t } = useTranslation()
   return (
-    <div className="text-emerald-400  text-2xl pt-16 sm:pt-1">
-      <h1>
-        Hi
-        {name}
-      </h1>
+    <div className="space-y-8 break-words">
+      <PageHeading title={t('app.greeting', { name })} description={t('landing.routing')} />
+      <HomeLink />
     </div>
   )
 }

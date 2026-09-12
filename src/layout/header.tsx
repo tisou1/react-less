@@ -1,72 +1,56 @@
-import { Languages, Moon, Sun } from 'lucide-react'
-import { NavLink } from 'react-router'
+import { Languages, Menu, Moon, Sun, X } from 'lucide-react'
+import { useState } from 'react'
+import { NavLink, useLocation } from 'react-router'
+import { toast } from 'sonner'
 import { Button } from '~/components/ui/button'
-import { __changeTheme } from '~/composables'
+import { __changeTheme, updatePreferences, useTheme } from '~/composables'
 import { cn } from '~/lib/utils'
 import i18n from '../i18next'
 
-const navItems = [
-  { to: '/', labelKey: 'nav.home' },
-  { to: '/todo', labelKey: 'nav.todo' },
-  { to: '/test', labelKey: 'nav.playground' },
-]
-
+const navItems = [{ to: '/', key: 'home' }, { to: '/components', key: 'components' }, { to: '/examples/data', key: 'data' }, { to: '/todo', key: 'todo' }, { to: '/settings', key: 'settings' }]
 export default function Header() {
   const { t } = useTranslation()
-  const changeLanguage = () => {
-    const language = localStorage.getItem('i18nextLng')
-    if (language?.startsWith('zh'))
-      i18n.changeLanguage('en')
-
-    else
-      i18n.changeLanguage('zh')
+  const { theme } = useTheme()
+  const location = useLocation()
+  const [menu, setMenu] = useState<string | null>(null)
+  const open = menu === location.key
+  const persist = (saved: boolean) => {
+    if (!saved)
+      toast.error(t('app.storageFailed'))
   }
-
+  const changeLanguage = async () => {
+    const language = i18n.resolvedLanguage?.startsWith('zh') ? 'en' : 'zh'
+    await i18n.changeLanguage(language)
+    persist(updatePreferences({ language }))
+  }
+  const links = navItems.map(item => <NavLink key={item.to} end={item.to === '/'} to={item.to} onClick={() => setMenu(null)} className={({ isActive }) => cn('rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-foreground', isActive && 'bg-primary/10 font-medium text-primary')}>{t(`nav.${item.key}`)}</NavLink>)
   return (
-    <header className="fixed inset-x-0 top-0 z-[100] flex h-16 items-center justify-between border-b border-border bg-background/80 px-4 backdrop-blur sm:px-6">
-      <div className="flex items-center gap-1">
-        <NavLink to="/" className="mr-3 flex items-center gap-2">
-          <span className="flex size-7 items-center justify-center rounded-md bg-primary font-semibold text-primary-foreground text-sm">
-            R
-          </span>
-          <span className="hidden font-semibold sm:inline">react-less</span>
+    <header className="sticky top-0 z-30 border-b bg-background/95 backdrop-blur">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-2 px-4 sm:px-6">
+        <NavLink to="/" onClick={() => setMenu(null)} className="flex shrink-0 items-center gap-2 font-semibold tracking-tight">
+          <span className="flex size-8 items-center justify-center rounded-lg bg-primary font-mono text-sm text-primary-foreground">r.</span>
+          react-less
         </NavLink>
-        {navItems.map(item => (
-          <NavLink
-            key={item.to}
-            to={item.to}
-            className={({ isActive }) => cn(
-              'rounded-md px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-accent hover:text-foreground',
-              isActive && 'bg-accent font-medium text-accent-foreground',
-            )}
-          >
-            {t(item.labelKey)}
-          </NavLink>
-        ))}
+        <nav aria-label={t('app.navigation')} className="hidden items-center gap-1 md:flex">{links}</nav>
+        <div className="flex items-center gap-1">
+          <Button variant="ghost" size="icon" aria-label={t('app.language')} onClick={changeLanguage}><Languages /></Button>
+          <Button variant="ghost" size="icon" aria-label={t(theme === 'dark' ? 'theme.toLight' : 'theme.toDark')} onClick={() => persist(__changeTheme(theme === 'dark' ? 'light' : 'dark'))}>{theme === 'dark' ? <Sun /> : <Moon />}</Button>
+          <Button className="md:hidden" variant="ghost" size="icon" aria-label={t('app.menu')} aria-expanded={open} aria-controls="mobile-nav" onClick={() => setMenu(open ? null : location.key)}>{open ? <X /> : <Menu />}</Button>
+        </div>
       </div>
-      <div className="flex items-center gap-1">
-        <Button variant="ghost" size="icon" title={t('change')} onClick={changeLanguage}>
-          <Languages />
-        </Button>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="dark:hidden"
-          aria-label={t('theme.toDark')}
-          onClick={() => __changeTheme('dark')}
+      {open && (
+        <nav
+          id="mobile-nav"
+          aria-label={t('app.navigation')}
+          className="flex flex-col gap-1 border-t px-4 py-3 md:hidden"
+          onKeyDown={(e) => {
+            if (e.key === 'Escape')
+              setMenu(null)
+          }}
         >
-          <Moon />
-        </Button>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="hidden dark:inline-flex"
-          aria-label={t('theme.toLight')}
-          onClick={() => __changeTheme('light')}
-        >
-          <Sun />
-        </Button>
-      </div>
+          {links}
+        </nav>
+      )}
     </header>
   )
 }

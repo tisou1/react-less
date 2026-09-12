@@ -2,12 +2,15 @@ import i18n from 'i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import Backend from 'i18next-http-backend'
 import { initReactI18next } from 'react-i18next'
+import { loadPreferences } from '~/lib/preferences'
 
 i18n
   .use(Backend) // 加载远程多语言数据
   .use(LanguageDetector) // 探测浏览器默认语言
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
+    lng: loadPreferences().language === 'auto' ? undefined : loadPreferences().language,
+    supportedLngs: ['en', 'zh'],
     // lng: 'en', // if you're using a language detector, do not define the lng option
     fallbackLng: 'zh', // 设置得语言不可用时,用这个语言
     load: 'languageOnly', // zh-CN -> zh，与 locales/zh 目录对齐
@@ -36,3 +39,9 @@ i18n
   })
 
 export default i18n
+
+function syncLanguage() {
+  document.documentElement.lang = i18n.resolvedLanguage || 'zh'
+}
+i18n.on('languageChanged', syncLanguage)
+i18n.on('initialized', syncLanguage)

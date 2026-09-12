@@ -62,9 +62,9 @@ export function FormSection() {
           <Switch id="digest" checked={digest} onCheckedChange={setDigest} />
         </div>
         <div className="space-y-2">
-          <Label>{t('form.frequency.label')}</Label>
+          <Label htmlFor="demo-frequency">{t('form.frequency.label')}</Label>
           <Select value={frequency} onValueChange={setFrequency}>
-            <SelectTrigger className="w-48">
+            <SelectTrigger id="demo-frequency" className="w-48">
               <SelectValue placeholder={t('form.frequency.placeholder')} />
             </SelectTrigger>
             <SelectContent>
@@ -90,7 +90,17 @@ export function FormSection() {
         </div>
       </CardContent>
       <CardFooter className="justify-end gap-2">
-        <Button variant="ghost" onClick={() => toast(t('form.toast.reset'))}>
+        <Button
+          variant="ghost"
+          onClick={() => {
+            setNotify(true)
+            setDigest(false)
+            setAgree(false)
+            setFrequency('weekly')
+            setBio('')
+            toast(t('form.toast.reset'))
+          }}
+        >
           {t('form.reset')}
         </Button>
         <Button onClick={handleSave}>
